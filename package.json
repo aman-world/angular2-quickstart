@@ -1,6 +1,6 @@
 {
-  "name": "angular-quickstart",
-  "version": "1.0.0",
+  "name": "angular2-quickstart",
+  "version": "0.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
     "build": "tsc -p src/",
@@ -20,9 +20,6 @@
     "test:once": "karma start karma.conf.js --single-run",
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "@angular/common": "~4.3.4",
     "@angular/compiler": "~4.3.4",
