@@ -1,0 +1,8 @@
+<input type="button" class="btn btn-primary" value="Display last added Employee details" (click)="getEmployeeDetails()">
+
+<div style="padding-top: 5px;" *ngIf="e">
+    <span class="text-success">
+        <strong>Name:</strong> {{e.name}},
+        <strong>Emp No:</strong> {{e.empNo}}
+    </span>
+</div>
