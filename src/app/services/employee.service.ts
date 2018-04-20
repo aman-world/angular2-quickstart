@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class EmployeeService {
     emp: Employee;
+    empList: Employee[] = [];
     constructor(private http: Http) {
         console.log('Emp constructor ...');
     }
@@ -29,11 +30,17 @@ export class EmployeeService {
 
     public setEmp(emp: Employee): void {
         this.emp = emp;
-        console.log('Set emp details:', this.emp);
     }
 
     public getEmp(): Employee {
-        console.log('Get emp details:', this.emp);
         return this.emp;
+    }
+
+    public setEmpList(empList: Employee[]): void {
+        this.empList = empList;
+    }
+
+    public getEmpList(): Employee[] {
+        return this.empList;
     }
 }

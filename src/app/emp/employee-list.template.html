@@ -1,0 +1,27 @@
+<div *ngIf="employeeList?.length" style="padding-top: 5px;">
+    <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Emp No</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employeeList;let i = index">
+                        <td>{{emp.empNo}}</td>
+                        <td>{{emp.name | uppercase}}</td>
+                        <td>{{emp.salary | currency}}</td>
+                        <td>
+                            <i class="glyphicon glyphicon-trash" style="cursor: pointer;" (click)="deleteEmployee(emp.empNo)" title="Delete"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row" style="padding-top: 5px;">
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <h2 class="text-success">Hello {{name}}</h2>
+                    <app2></app2>
+                    <app3></app3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div style="padding-top: 5px;">
+                <ul class="nav nav-tabs">
+                    <li [routerLinkActive]="['active']">
+                        <a [routerLink]="['/employee']">Add Employee</a>
+                    </li>
+                    <li [routerLinkActive]="['active']">
+                        <a [routerLink]="['/list']">List Employee</a>
+                    </li>
+                    <li [routerLinkActive]="['active']">
+                        <a [routerLink]="['/details']">Employee Details</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="padding-top: 5px; padding-bottom: 5px;">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
