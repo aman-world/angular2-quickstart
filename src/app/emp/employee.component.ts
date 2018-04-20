@@ -16,10 +16,10 @@ export class EmployeeComponent {
 
   constructor(private empService: EmployeeService) {
     this.empService.getEmployeeList(this.pageIndex).subscribe(res => {
-      for (let index = 0; index < res.total_pages; index++) {
+      this.userList = res;
+      for (let index = 0; index < this.userList.total_pages; index++) {
         this.pages.push(index + 1);
       }
-      this.userList = res;
       console.log(this.userList);
     });
   }

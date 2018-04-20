@@ -21,32 +21,33 @@
                 <div style="padding-top: 5px;">
                     <span class="text-danger">{{error}}</span>
                 </div>
-                <div *ngIf="employeeList?.length" style="padding-top: 5px;">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"></div>
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Emp No</th>
-                                        <th>Name</th>
-                                        <th>Salary</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let emp of employeeList;let i = index">
-                                        <td>{{emp.empNo}}</td>
-                                        <td>{{emp.name | uppercase}}</td>
-                                        <td>{{emp.salary | currency}}</td>
-                                        <td>
-                                            <i class="glyphicon glyphicon-trash" style="cursor: pointer;" (click)="deleteEmployee(emp.empNo)" title="Delete"></i>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            </div>
+        </div>
+
+        <div *ngIf="employeeList?.length" style="padding-top: 5px;">
+            <div class="panel panel-default">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Emp No</th>
+                                <th>Name</th>
+                                <th>Salary</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let emp of employeeList;let i = index">
+                                <td>{{emp.empNo}}</td>
+                                <td>{{emp.name | uppercase}}</td>
+                                <td>{{emp.salary | currency}}</td>
+                                <td>
+                                    <i class="glyphicon glyphicon-trash" style="cursor: pointer;" (click)="deleteEmployee(emp.empNo)" title="Delete"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -77,17 +78,19 @@
                         </tbody>
                     </table>
                     <div class="pull-right">
-                        <!-- <input *ngIf="userList.page !== 1" style="cursor: pointer;" class="btn btn-primary" type="button" value="<< Prev" (click)="loadPage(userList.page - 1)">
-                        <input *ngIf="userList.page < userList.total_pages" style="cursor: pointer;" class="btn btn-primary" type="button" value="Next >>"
-                            (click)="loadPage(userList.page + 1)"> -->
+                        <input *ngIf="userList.page !== 1" style="cursor: pointer;" class="btn btn-primary" type="button" value="<< Prev" (click)="loadPage(userList.page - 1)">
                         <span *ngFor="let pageIndex of pages;let i=index;">
                             <input style="cursor: pointer;" class="btn btn-default" type="button" value="{{pageIndex}}" (click)="loadPage(pageIndex)">
                         </span>
+                        <input *ngIf="userList.page < userList.total_pages" style="cursor: pointer;" class="btn btn-primary" type="button" value="Next >>"
+                            (click)="loadPage(userList.page + 1)">
                     </div>
                 </div>
             </div>
         </div>
         <div style="padding-top: 5px;">
+            <!-- <a class="btn btn-primary btn-block" [routerLink]="['/details']">Display Employee List</a>
+            <router-outlet></router-outlet> -->
             <employee-details></employee-details>
         </div>
     </div>
